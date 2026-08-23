@@ -22,7 +22,7 @@ import {
 } from 'react-native-image-picker';
 
 
-const API_URL = 'http://10.115.10.91:5000/api';
+const API_URL = 'https://ecolocate-isks.onrender.com/api';
 
 
 // ======================================================
@@ -99,7 +99,7 @@ const HomeScreen = ({navigation}) => {
 
 
       const response = await fetch(
-        'http://10.115.10.91:5000/api/analyze-image',
+        'https://ecolocate-isks.onrender.com/api/analyze-image',
         {
           method: 'POST',
           body: formData,
@@ -146,23 +146,18 @@ const HomeScreen = ({navigation}) => {
 
     } catch (error) {
 
-      console.log(
-        'AI upload error:',
-        error.message,
-      );
+  console.log('AI upload error:', error);
 
+  Alert.alert(
+    'AI Error',
+    error.message || 'Unable to analyze the image.',
+  );
 
-      Alert.alert(
-        'Error',
-        'Unable to analyze the image.',
-      );
+} finally {
 
-    }finally {
+  setIsAnalyzing(false);
 
-    // Always stop the loading screen
-    setIsAnalyzing(false);
-
-  }
+}
 
   };
 

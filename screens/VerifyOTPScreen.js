@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://ecolocate-isks.onrender.com/api/auth';
 
 const VerifyOTPScreen = ({route, navigation}) => {
   const {email} = route.params;

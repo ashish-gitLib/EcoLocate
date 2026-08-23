@@ -39,8 +39,11 @@ import * as Keychain from 'react-native-keychain';
 
 const MAPTILER_KEY = 'Sav09CjMIvl7Xe4dwrqD';
 const FACILITY_API_URL =
-  'http://localhost:5000/api/facilities';
-  const API_URL = 'http://localhost:5000/api';
+  'https://ecolocate-isks.onrender.com/api/facilities';
+
+const API_URL =
+  'https://ecolocate-isks.onrender.com/api';
+  
 
 
 // ======================================================

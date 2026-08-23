@@ -13,7 +13,7 @@ import {
 import * as Keychain from 'react-native-keychain';
 
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://ecolocate-isks.onrender.com/api';
 
 const RewardsScreen = ({navigation}) => {
   const [activeTab, setActiveTab] = useState('activity');

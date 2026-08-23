@@ -13,7 +13,7 @@ import {
 
 import * as Keychain from 'react-native-keychain';
 
-const API_URL = 'http://10.115.10.91:5000/api';
+const API_URL = 'https://ecolocate-isks.onrender.com/api';
 
 const EditProfileScreen = ({navigation, route}) => {
   const [username, setUsername] = useState('');
