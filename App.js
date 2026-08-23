@@ -26,6 +26,7 @@ import EditProfileScreen from './screens/EditProfileScreen';
 import MainTabs from './navigation/MainTabs';
 import LearnMoreScreen from './screens/LearnMoreScreen';
 import NonEwasteScreen from './screens/NonEwasteScreen';
+import NetworkProvider from './components/NetworkProvider';
 
 const Stack = createNativeStackNavigator();
 
@@ -73,6 +74,7 @@ const App = () => {
 }
 
   return (
+    <NetworkProvider>
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
@@ -185,6 +187,7 @@ const App = () => {
 
       </Stack.Navigator>
     </NavigationContainer>
+    </NetworkProvider>
   );
 };
 
