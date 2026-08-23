@@ -9,7 +9,7 @@ const imageAnalysisRoutes =
   require('./routes/imageAnalysisRoutes');
 
 
-const {Resend} = require('resend');
+
 
 const passwordResetRoutes = require('./routes/passwordResetRoutes');
 
@@ -21,7 +21,7 @@ const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 app.use(cors());
 app.use(express.json());
