@@ -39,29 +39,26 @@ const analyzeUploadedImage = async (
     });
 
 
-  } catch (error) {
-  console.error(
-    'Image analysis controller error:',
-    error.message,
-  );
+   } catch (error) {
 
-  if (
-    error.status === 429 ||
-    error.message?.includes('quota')
-  ) {
-    return res.status(429).json({
+    console.error(
+      'Image analysis controller error:',
+      error.message,
+    );
+
+    // Send the actual user-friendly error
+    // from visionService.js to the app
+
+    return res.status(
+      error.status || 500,
+    ).json({
       success: false,
       message:
-        'AI analysis limit has been reached. Please try again later.',
+        error.message ||
+        'Unable to analyze the image.',
     });
-  }
 
-  return res.status(500).json({
-    success: false,
-    message:
-      'Unable to analyze the image.',
-  });
-}
+  }
 
 };
 
